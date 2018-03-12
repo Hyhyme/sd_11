@@ -5,18 +5,6 @@ var clear = document.getElementById( 'clearButt' );
 var time;
 var circles = [];
 
-/*
-var makeCirc = function(e) {
-    var circ = document.createElementNS( ns, 'circle' );
-    circ.setAttribute( 'cx', 250 );
-    circ.setAttribute( 'cy', 250 );
-    circ.setAttribute( 'r', 33 );
-    circ.setAttribute( 'fill', 'coral' );
-    cvs.appendChild(circ);
-    return circ;
-}
-*/
-
 var makeCirc = function(e) {
     
     clearInterval(time);
@@ -32,36 +20,6 @@ var makeCirc = function(e) {
     cvs.appendChild(circ);
     circles.push(circ);
 }
-
-/*
-var dvdIt = function(e) {
-    
-    var angle = Math.PI / 6;
-    
-    var dX = Math.cos(angle) * 8;
-    var dY = Math.sin(angle) * 8;
-
-    c = makeCirc();
-    currX = Number(c.getAttribute('cx'));
-    currY = Number(c.getAttribute('cy'));
-    
-    var bouncing = function() {
-	
-	if( currX <= 33 || currX >= 467 ) {
-	    dX *= -1;
-	}
-	if( currY <= 33 || currY >= 467 ) {
-	    dY *= -1;
-	}
-	currX += dX;
-	currY += dY;
-	c.setAttribute('cx', currX );
-	c.setAttribute('cy', currY );	
-    }
-    
-    time = setInterval( bouncing, 1000/60 );	
-}
-*/
 
 var dvdIt = function(e) {
     var n = 0;
@@ -101,7 +59,6 @@ var clearIt = function() {
     }
     clearInterval(time);
 }
-
 
 cvs.addEventListener( 'click', makeCirc );
 clear.addEventListener( 'click', clearIt );
